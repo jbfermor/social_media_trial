@@ -1,5 +1,9 @@
 <div id="<%= dom_id profile %>">
   <p>
+    <strong>Avatar:</strong>
+    <%= image_tag profile.avatar.variant(:thumb) %>
+  </p>
+  <p>
     <strong>Name:</strong>
     <%= profile.name %>
   </p>

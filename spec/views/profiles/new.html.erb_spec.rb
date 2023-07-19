@@ -2,18 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "profiles/new", type: :view do
   before(:each) do
-    assign(:profile, Profile.new(
-      name: "MyString",
-      surname1: "MyString",
-      surname2: "MyString",
-      address: "MyString",
-      city: "MyString",
-      province: "MyString",
-      country: "MyString",
-      postal_code: "MyString",
-      phone: "MyString",
-      user: nil
-    ))
+    assign(:profile, build(:profile))
   end
 
   it "renders new profile form" do

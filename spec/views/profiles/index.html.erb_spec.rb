@@ -3,30 +3,8 @@ require 'rails_helper'
 RSpec.describe "profiles/index", type: :view do
   before(:each) do
     assign(:profiles, [
-      Profile.create!(
-        name: "Name",
-        surname1: "Surname1",
-        surname2: "Surname2",
-        address: "Address",
-        city: "City",
-        province: "Province",
-        country: "Country",
-        postal_code: "Postal Code",
-        phone: "Phone",
-        user: nil
-      ),
-      Profile.create!(
-        name: "Name",
-        surname1: "Surname1",
-        surname2: "Surname2",
-        address: "Address",
-        city: "City",
-        province: "Province",
-        country: "Country",
-        postal_code: "Postal Code",
-        phone: "Phone",
-        user: nil
-      )
+      build(:profile),
+      build(:profile)
     ])
   end
 

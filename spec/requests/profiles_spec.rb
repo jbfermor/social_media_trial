@@ -17,12 +17,34 @@ RSpec.describe "/profiles", type: :request do
   # This should return the minimal set of attributes required to create a valid
   # Profile. As you add validations to Profile, be sure to
   # adjust the attributes here as well.
+
+  let (:user) { build(:user) }
+
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    { name: "name",
+      surname1: "surname1",
+      surname2: "surname2",
+      address: "address",
+      city: "city",
+      province: "province",
+      country: "country",
+      postal_code: "postal_code",
+      phone: "phone",
+      user_id: 1,
+      avatar: nil}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    { name: "name",
+      surname1: "surname1",
+      surname2: "surname2",
+      address: "address",
+      city: "city",
+      province: "province",
+      country: "country",
+      postal_code: "postal_code",
+      phone: "phone",
+      user_id: nil }
   }
 
   describe "GET /index" do
@@ -89,14 +111,14 @@ RSpec.describe "/profiles", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        { name: "Pepe"}
       }
 
       it "updates the requested profile" do
         profile = Profile.create! valid_attributes
         patch profile_url(profile), params: { profile: new_attributes }
         profile.reload
-        skip("Add assertions for updated state")
+        expect(profile.name).to eq("Pepe")
       end
 
       it "redirects to the profile" do

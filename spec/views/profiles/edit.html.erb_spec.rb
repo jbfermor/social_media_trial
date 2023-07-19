@@ -1,19 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe "profiles/edit", type: :view do
+
+  let (:user) { create(:user) }
+
   let(:profile) {
-    Profile.create!(
-      name: "MyString",
-      surname1: "MyString",
-      surname2: "MyString",
-      address: "MyString",
-      city: "MyString",
-      province: "MyString",
-      country: "MyString",
-      postal_code: "MyString",
-      phone: "MyString",
-      user: nil
-    )
+    create(:profile, user_id: user.id)
   }
 
   before(:each) do

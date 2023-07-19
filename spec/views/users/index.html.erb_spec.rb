@@ -2,14 +2,9 @@ require 'rails_helper'
 
 RSpec.describe "users/index", type: :view do
   before(:each) do
-    assign(:users, [
-      User.create!(
-        name: "Name"
-      ),
-      User.create!(
-        name: "Name"
-      )
-    ])
+    user = build_stubbed(:user)
+    user2 = build_stubbed(:user, name: "pepe")
+    assign(:users, [user, user2])
   end
 
   it "renders a list of users" do

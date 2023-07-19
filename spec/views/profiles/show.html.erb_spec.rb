@@ -2,18 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "profiles/show", type: :view do
   before(:each) do
-    assign(:profile, Profile.create!(
-      name: "Name",
-      surname1: "Surname1",
-      surname2: "Surname2",
-      address: "Address",
-      city: "City",
-      province: "Province",
-      country: "Country",
-      postal_code: "Postal Code",
-      phone: "Phone",
-      user: nil
-    ))
+    assign(:profile, build(:profile))
   end
 
   it "renders attributes in <p>" do
