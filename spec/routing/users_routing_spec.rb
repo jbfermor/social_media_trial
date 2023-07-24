@@ -1,6 +1,8 @@
 require "rails_helper"
+require_relative "../support/devise"
 
 RSpec.describe UsersController, type: :routing do
+  login
   describe "routing" do
     it "routes to #index" do
       expect(get: "/users").to route_to("users#index")
@@ -20,7 +22,7 @@ RSpec.describe UsersController, type: :routing do
 
 
     it "routes to #create" do
-      expect(post: "/users").to route_to("users#create")
+      expect(post: "/users").to route_to("devise/registrations#create")
     end
 
     it "routes to #update via PUT" do

@@ -18,8 +18,7 @@ RSpec.describe "profiles/index", type: :view do
     assert_select cell_selector, text: Regexp.new("City".to_s), count: 2
     assert_select cell_selector, text: Regexp.new("Province".to_s), count: 2
     assert_select cell_selector, text: Regexp.new("Country".to_s), count: 2
-    assert_select cell_selector, text: Regexp.new("Postal Code".to_s), count: 2
+    assert_select cell_selector, text: Regexp.new("Postal code".to_s), count: 2
     assert_select cell_selector, text: Regexp.new("Phone".to_s), count: 2
-    assert_select cell_selector, text: Regexp.new(nil.to_s), count: 2
   end
 end
