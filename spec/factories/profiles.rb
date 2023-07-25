@@ -19,6 +19,6 @@ FactoryBot.define do
     country {"country"}
     postal_code {"postal_code"}
     phone {"phone"}
-    association :user
+    user
   end
 end 
